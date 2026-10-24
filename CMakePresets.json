@@ -1,0 +1,55 @@
+﻿{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 3,
+    "patch": 1
+  },
+  "configurePresets": [
+    {
+      "name": "_base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/install"
+    },
+    {
+      "name": "windows-shared",
+      "displayName": "Windows Preset",
+      "inherits": "_base",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl",
+        "CMAKE_CXX_COMPILER": "cl"
+      }
+    },
+    {
+      "name": "unix-shared",
+      "displayName": "Linux & macOS Preset",
+      "inherits": "_base",
+      "condition": {
+        "type": "inList",
+        "string": "${hostSystemName}",
+        "list": [ "Linux", "Darwin" ]
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-shared",
+      "configurePreset": "windows-shared"
+    },
+    {
+      "name": "unix-shared",
+      "configurePreset": "unix-shared"
+    }
+  ]
+}
