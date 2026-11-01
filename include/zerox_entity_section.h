@@ -13,12 +13,13 @@ namespace ZeroXBridge
 
 	enum class EntitySectionType : uint64_t
 	{
-		UNKNOWN		= 0,
-		BACKGROUND	= 1,
-		SPRITE		= 2,
-		COLLIDER	= 3,
-		PARTICLE	= 4,
-		TEXT		= 5
+		UNKNOWN			= 0,
+		BACKGROUND		= 1,
+		SPRITE			= 2,
+		TILED_SPRITE	= 3,
+		COLLIDER		= 4,
+		PARTICLE		= 5,
+		TEXT			= 6
 		// etc...
 	};
 
