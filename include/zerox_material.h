@@ -3,6 +3,8 @@
 #include <glm/vec2.hpp>
 #include <glm/vec4.hpp>
 
+#include <cstdint>
+
 namespace ZeroXBridge
 {
 	struct alignas(16) Material
@@ -10,5 +12,7 @@ namespace ZeroXBridge
 		glm::vec4 color		{ 1.0f, 1.0f, 1.0f, 1.0f };
 		glm::vec2 uvOffset	{ 0.0f, 0.0f };
 		glm::vec2 uvScale	{ 1.0f, 1.0f };
+		uint64_t tileSizeX	{ 1 };
+		uint64_t tileSizeY	{ 1 };
 	};
 }
