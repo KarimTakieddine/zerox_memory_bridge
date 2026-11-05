@@ -8,14 +8,10 @@
 #include <memory_view.hpp>
 #include <memory_cursor.hpp>
 
+#include "zerox_material.h"
+
 namespace ZeroXBridge
 {
-	struct alignas(16) SizeConfig
-	{
-		uint64_t width	{ 1 };
-		uint64_t height	{ 1 };
-	};
-
 	struct alignas(16) TransformConfig
 	{
 		glm::vec2 position	{ 0.0f, 0.0f };
@@ -30,29 +26,32 @@ namespace ZeroXBridge
 
 	struct alignas(16) BackgroundConfig
 	{
+		Material materialConfig;
 		TransformConfig transformConfig;
 	};
 
 	struct alignas(16) ObstacleConfig
 	{
+		Material materialConfig;
 		TransformConfig transformConfig;
 		ColliderConfig colliderConfig;
-		SizeConfig tileSizeConfig;
 	};
 
 	struct alignas(16) EnemyConfig
 	{
+		Material materialConfig;
 		TransformConfig transformConfig;
 		ColliderConfig colliderConfig;
 	};
 
 	struct alignas(16) PlayerConfig
 	{
+		Material materialConfig;
 		TransformConfig transformConfig;
 		ColliderConfig colliderConfig;
 	};
 
-	struct Level
+	struct alignas(16) Level
 	{
 		BackgroundConfig* backgrounds	{ nullptr };
 		ObstacleConfig* obstacles		{ nullptr };
