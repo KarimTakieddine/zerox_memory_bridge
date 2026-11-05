@@ -3,6 +3,8 @@
 #include <cstdint>
 #include <type_traits>
 
+#include <glm/vec2.hpp>
+
 namespace ZeroXBridge
 {
     enum class Button : uint8_t

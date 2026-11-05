@@ -11,6 +11,8 @@ add_library(${PROJECT_NAME} INTERFACE)
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 if(WIN32)
+    set(GLM_BUILD_LIBRARY OFF CACHE INTERNAL "")
+    set(GLM_BUILD_TESTS OFF CACHE INTERNAL "")
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/glm)
 elseif(UNIX)
     find_package(glm 1.0 REQUIRED)
