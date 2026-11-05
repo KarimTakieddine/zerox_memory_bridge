@@ -1,11 +1,10 @@
 #pragma once
 
-#include <zerox_input.h>
-
-#include "zerox_level.hpp"
-
 namespace ZeroXBridge
 {
+	struct Input;
+	struct Level;
+
 	struct GameContext
 	{
 		Input* input		{ nullptr };
