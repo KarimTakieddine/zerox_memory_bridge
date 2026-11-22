@@ -3,6 +3,7 @@
 namespace ZeroXBridge
 {
     struct Texture;
+    struct AudioSound;
 
     typedef void* EngineHandle;
 
@@ -10,7 +11,7 @@ namespace ZeroXBridge
     typedef bool (*ReadFileProc)(const char*, char*, size_t);
     typedef void (*AllocateTextureProc)(EngineHandle, const char*, const Texture*);
     typedef void (*AllocateTextureArrayProc)(EngineHandle, const char* const*, const Texture*, size_t);
-    typedef void (*AllocateAudioProc)(EngineHandle, const char*);
+    typedef void (*AllocateAudioProc)(EngineHandle, const char*, const AudioSound*);
     typedef void (*PlayAudioProc)(EngineHandle, size_t);
 
     struct EngineFunctions
