@@ -26,7 +26,7 @@ namespace ZeroXBridge
         PlayAudioProc playAudio                         { nullptr };
     };
 
-    inline constexpr isValid(const EngineFunctions* engineFunctions)
+    inline constexpr bool isValid(const EngineFunctions* engineFunctions)
     {
         return
             engineFunctions->handle                 &&
