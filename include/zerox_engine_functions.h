@@ -10,7 +10,7 @@ namespace ZeroXBridge
     typedef size_t (*GetFileSizeProc)(const char*);
     typedef bool (*ReadFileProc)(const char*, char*, size_t);
     typedef void (*UploadTexturesProc)(EngineHandle, const char* const*, const Texture*, size_t);
-    typedef void (*UploadTextureArrayProc)(EngineHandle, const char* const*, const Texture*, size_t);
+    typedef void (*UploadTextureArrayProc)(EngineHandle, const char* const*, size_t, const Texture*, size_t);
     typedef void (*AllocateAudioProc)(EngineHandle, const char*, const AudioSound*);
     typedef void (*PlayAudioProc)(EngineHandle, size_t);
 
