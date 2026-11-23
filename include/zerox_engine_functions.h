@@ -9,7 +9,7 @@ namespace ZeroXBridge
 
     typedef size_t (*GetFileSizeProc)(const char*);
     typedef bool (*ReadFileProc)(const char*, char*, size_t);
-    typedef void (*AllocateTextureProc)(EngineHandle, const char*, const Texture*);
+    typedef void (*AllocateTexturesProc)(EngineHandle, const char* const*, const Texture*, size_t);
     typedef void (*AllocateTextureArrayProc)(EngineHandle, const char* const*, const Texture*, size_t);
     typedef void (*AllocateAudioProc)(EngineHandle, const char*, const AudioSound*);
     typedef void (*PlayAudioProc)(EngineHandle, size_t);
@@ -20,7 +20,7 @@ namespace ZeroXBridge
 
         GetFileSizeProc getFileSize                     { nullptr };
         ReadFileProc readFile                           { nullptr };
-        AllocateTextureProc allocateTexture             { nullptr };
+        AllocateTexturesProc allocateTextures           { nullptr };
         AllocateTextureArrayProc allocateTextureArray   { nullptr };
         AllocateAudioProc allocateAudio                 { nullptr };
         PlayAudioProc playAudio                         { nullptr };
@@ -32,7 +32,7 @@ namespace ZeroXBridge
             engineFunctions->handle                 &&
             engineFunctions->getFileSize            &&
             engineFunctions->readFile               &&
-            engineFunctions->allocateTexture        &&
+            engineFunctions->allocateTextures       &&
             engineFunctions->allocateTextureArray   &&
             engineFunctions->allocateAudio          &&
             engineFunctions->playAudio;
